@@ -1,0 +1,5 @@
+{
+  "name": "Update main from release Workflow",
+  "description": "Automatically open a PR whenever there is a push to release",
+  "iconName": "update-main-from-release-icon"
+}
