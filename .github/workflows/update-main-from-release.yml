@@ -1,6 +1,7 @@
+
 # This opens a pull request everytime someone pushes to the release branch.
 
-name: pull-request
+name: update-main-from-release
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the branches that start with "release"
@@ -16,15 +17,14 @@ jobs:
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
-    - name: pull-request
-      uses: repo-sync/pull-request@v2
-      with:
-        destination_branch: "main"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_title: "Update main from release"
-        pr_body: ":rocket: *An automated PR* - Please make any changes needed to resolve merge conflicts and then approve and merge!"
-        pr_reviewer: "forana,${{ github.actor }}"
-        pr_draft: true
+      - name: pull-request
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "main"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pr_title: "Update main from release"
+          pr_body: ":rocket: *An automated PR* - Please make any changes needed to resolve merge conflicts and then approve and merge!"
+          pr_reviewer: "forana,${{ github.actor }}"
