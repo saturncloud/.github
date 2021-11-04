@@ -1,0 +1,6 @@
+{
+  "name": "Publish to PyPI Workflow",
+  "description": "Automatically build and push a package whenever a release is published",
+  "iconName": "publish-to-pypi-icon"
+}
+  
